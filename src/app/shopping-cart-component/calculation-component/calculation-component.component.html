@@ -1,0 +1,7 @@
+<div *ngIf="service.shoppingCart.length > 0">
+  <h3>Summary</h3>
+  <p>Subtotal: ${{ service.getSubtotal().toFixed(2) }}</p>
+  <p>Tax (13%): ${{ service.getTax().toFixed(2) }}</p>
+  <p>Total: ${{ service.getTotal().toFixed(2) }}</p>
+</div>
+<router-outlet></router-outlet>

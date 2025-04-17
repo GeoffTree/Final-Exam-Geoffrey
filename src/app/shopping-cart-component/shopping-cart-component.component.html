@@ -1,0 +1,25 @@
+<h2>Shopping Cart</h2>
+<div *ngIf="shoppingCart.length === 0">
+  <p>Your cart is empty.</p>
+</div>
+
+<table *ngIf="shoppingCart.length > 0" class="table table-striped">
+  <thead>
+  <tr>
+    <th>Product</th>
+    <th>Price ($)</th>
+    <th>Quantity</th>
+    <th>Line Total ($)</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let item of shoppingCart">
+    <td>{{ item.productName }}</td>
+    <td>{{ item.price }}</td>
+    <td>{{ item.quantity }}</td>
+    <td>{{ item.price! * item.quantity! }}</td>
+  </tr>
+  </tbody>
+</table>
+
+<router-outlet></router-outlet>

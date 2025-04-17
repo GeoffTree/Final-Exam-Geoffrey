@@ -1,0 +1,10 @@
+<h2>Products</h2>
+<div class="d-flex flex-wrap gap-3">
+  <button
+    *ngFor="let product of productList"
+    class="btn btn-outline-primary"
+    (click)="addToCart(product)">
+    {{ product.productName }} - ${{ product.price }}
+  </button>
+</div>
+<router-outlet></router-outlet>
